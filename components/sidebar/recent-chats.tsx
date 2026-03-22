@@ -41,19 +41,18 @@ function PureChatHistoryItem({
   return (
     <SidebarMenuItem
       key={chat.id}
-      className={`group/chat rounded-md pl-2 ${isActive ? "bg-secondary" : ""}`}
+      className={`group/chat rounded-md pl-2 hover:bg-muted/90 ${isActive ? "bg-muted" : ""}`}
       data-type="chat"
     >
       <div className="flex gap-4 items-center">
         <Link href={`/chat/${chat.id}`} className="truncate flex-1">
           {chat.title}
         </Link>
-        <div className="w-12">
-          <AlertDialogDestructive
-            conversationId={chat.id}
-            setRecentChats={setRecentChats}
-          />
-        </div>
+
+        <AlertDialogDestructive
+          conversationId={chat.id}
+          setRecentChats={setRecentChats}
+        />
       </div>
     </SidebarMenuItem>
   );
@@ -100,7 +99,10 @@ export function AlertDialogDestructive({
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <Button variant="outline" className="rounded-full p-1 has-[>svg]:p-2">
+        <Button
+          variant="ghost"
+          className="rounded-full p-1 has-[>svg]:p-2 group-hover/chat:opacity-100 opacity-0"
+        >
           <Trash2Icon className="w-1 h-1" />
         </Button>
       </AlertDialogTrigger>

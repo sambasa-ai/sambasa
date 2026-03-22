@@ -64,7 +64,7 @@ export function MessageForm({
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-3xl mx-auto bg-secondary rounded-2xl flex flex-1"
+      className="max-w-3xl mx-auto bg-accent rounded-2xl flex flex-1"
     >
       <div className="flex flex-col gap-3 px-5 py-4 w-full">
         <textarea

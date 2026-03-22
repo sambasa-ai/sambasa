@@ -17,7 +17,7 @@ export function SideBarNav() {
   return (
     <>
       <SidebarGroup>
-        <SidebarMenu className="">
+        <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton
               onClick={() => {
